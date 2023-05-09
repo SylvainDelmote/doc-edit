@@ -22,19 +22,32 @@ import { RouterLink, RouterView } from 'vue-router'
 <style>
 .container{
   display: flex;
-  justify-content: center;
+  justify-content:center;
   padding: 2rem;
 }
-
 nav{
   min-width: 10rem;
+  padding: 3 rem;
+ 
 }
 li {
   list-style: none;
+  margin: 1rem;
 }
 main{
-  width: 50vw;
+  width: 70vw;
+  min-width: 1000px;
   overflow: scroll;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  ul{
+    display: flex;
+  }
+
 }
 
 </style>

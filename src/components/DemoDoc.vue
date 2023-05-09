@@ -361,64 +361,35 @@
 </script>
 
 <template>
-    <div class="main">
-  
-      <!-- Top bar -->
-      <vue-file-toolbar-menu :content="menu" class="bar" />
-  
-      <!-- Document editor -->
-      <vue-document-editor class="editor" ref="editor"
+<div class="main">
+    <!-- Top bar -->
+    <vue-file-toolbar-menu :content="menu" class="bar"/>
+    
+    <!-- Document editor -->
+    <vue-document-editor class="editor" ref="editor"
         v-model:content="content"
         :overlay="overlay"
         :zoom="zoom"
         :page_format_mm="page_format_mm"
         :page_margins="page_margins"
-        :display="display" />
-  
-    </div>
-  </template>
+        :display="display" 
+        :editable="true"
+    />
+</div>
+</template>
   
  
-  <style>
-  html {
-    height: 100%;
-  }
-  body {
-    margin: 0;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: black;
-    background: rgb(248, 249, 250);
-  }
-  ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-  }
-  ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
-    display: none;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 5px solid transparent;
-    border-radius: 16px;
-    background-clip: content-box;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  </style>
-  
   <style scoped>
     .main {
       width: fit-content;
       min-width: 100%;
-    }
+      max-width: 50vw;
+        }
     .bar {
       position: sticky;
       left: 0;
       top: 0;
-      width: calc(100vw - 16px);
+      width: calc(50vw );
       z-index: 1000;
       background: rgba(248, 249, 250, 0.8);
       border-bottom: solid 1px rgb(248, 249, 250);
