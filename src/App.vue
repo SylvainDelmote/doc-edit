@@ -3,19 +3,38 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-      <nav>
-        <ul>
-          <li> <RouterLink to="/">Home</RouterLink></li>
-          <li><RouterLink to="/ck">CK Editor</RouterLink></li>
-          <li><RouterLink to="/tiptap">Tiptap</RouterLink></li>
-          <li><RouterLink to="/demo">Demo</RouterLink></li>
+  <div class="container">
+    <nav>
+      <ul>
+        <li> <RouterLink to="/">Home</RouterLink></li>
+        <li><RouterLink to="/ck">CK Editor</RouterLink></li>
+        <li><RouterLink to="/tiptap">Tiptap</RouterLink></li>
+        <li><RouterLink to="/demo">Demo</RouterLink></li>
       </ul>
-      </nav>
-  </header>
+    </nav>
 
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
+</div>
 </template>
 
-<style scoped>
+<style>
+.container{
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+nav{
+  min-width: 10rem;
+}
+li {
+  list-style: none;
+}
+main{
+  width: 50vw;
+  overflow: scroll;
+}
+
 </style>
