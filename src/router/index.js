@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CkView from "@/views/CkView.vue";
 import TiptapView from "@/views/TiptapView.vue";
+import DemoView from "@/views/DemoView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,9 @@ const router = createRouter({
         },
         {
             path: '/tiptap', name: 'tiptap', component: TiptapView
+        },
+        {
+            path: '/demo', name: 'demo', component: DemoView
         }
     ]
 })
