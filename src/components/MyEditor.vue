@@ -7,6 +7,8 @@ import {ref, computed, onMounted} from 'vue'
 
 // VARIABLES
 const editableBlock = `<div class='editableBlock' contenteditable='true'> <br> <h3> Editable Block </h3> Please Edith me </div>`
+const editableSpan = `<span class='editableSpan' contenteditable='true'> <br>   Span Edith me </span>`
+
 const  content= ref( ["<div> Coller du texte ici </div>"+editableBlock] )
 const  documentIsEditable = ref(true)
 
@@ -15,6 +17,12 @@ const menu =  computed( ()=> {
   return   [
     { text: "Nouveau", title: "Nouveau Document", icon: "description", click: () => { if(confirm("Créer un nouveau document ?")){ content.value = [""]; } } },
     { text:  documentIsEditable.value ? "Verrouiller" :"Deverrouiller", title: "Verrou document" , icon:  documentIsEditable.value ? "lock": "lock_open", click: () => { documentIsEditable.value = !documentIsEditable.value ; console.log(documentIsEditable.value) } },
+   
+    { is: "separator" },
+    { text: "Add block", type: "compact", title: "Ajout un bloc editable", icon: "add  ", click: () => { content.value = [content.value[0]+editableBlock]  } },
+    { text: "Add line", type: "compact", title: "Ajout un span editable", icon: "add", click: () => { content.value = [content.value[0]+editableSpan]  } },
+    { is: "separator" },
+
   ]
 } )
 
