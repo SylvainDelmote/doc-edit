@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <li><RouterLink to="/ck">CK Editor</RouterLink></li>
         <li><RouterLink to="/tiptap">Tiptap</RouterLink></li>
         <li><RouterLink to="/demo">Demo</RouterLink></li>
+        <li><RouterLink to="/myeditor">My Editor</RouterLink></li>
       </ul>
     </nav>
 

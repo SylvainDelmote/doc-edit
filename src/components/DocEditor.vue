@@ -24,7 +24,7 @@
 
 <script>
 import VueDocumentEditor from 'vue-document-editor'
-import TestForm from "@/components/TestForm.ce.vue";
+import TestForm from "@/components/template/TestForm.ce.vue";
 import {defineCustomElement, markRaw} from "vue";
 
 export default {

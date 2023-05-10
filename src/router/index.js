@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CkView from "@/views/CkView.vue";
 import TiptapView from "@/views/TiptapView.vue";
 import DemoView from "@/views/DemoView.vue";
+import MyEditorView from "@/views/MyEditorView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,9 @@ const router = createRouter({
         },
         {
             path: '/demo', name: 'demo', component: DemoView
+        },
+        {
+            path: '/myeditor', name: 'myeditor', component: MyEditorView
         }
     ]
 })

@@ -27,7 +27,6 @@
             mounted: false, // will be true after this component is mounted
             undo_count: -1, // contains the number of times user can undo (= current position in content_history)
             content_history: [], // contains the content states for undo/redo operations
-            test_saisie_libre : true,
           }
         },
       
@@ -110,7 +109,6 @@
               // Main commands
               { text: "New", title: "New", icon: "description", click: () => { if(confirm("This will create an empty document. Are you sure?")){ this.content = [""]; this.resetContentHistory(); } } },
               { text: "Print", title: "Print", icon: "print", click: () => window.print() },
-              { text : this.test_saisie_libre ?  "Lock " : "Unlock", title: "Verrou", icon: this.test_saisie_libre ? "lock" : "lock_open", click: () =>{ this.test_saisie_libre= !this.test_saisie_libre; console.log(this.test_saisie_libre) }},
               { is: "spacer" },
       
               // Undo / redo commands
@@ -374,7 +372,7 @@
         :page_format_mm="page_format_mm"
         :page_margins="page_margins"
         :display="display" 
-        :editable=test_saisie_libre
+        :editable="true"
     />
 </div>
 </template>
