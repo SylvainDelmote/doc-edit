@@ -45,9 +45,9 @@ const menu =  computed( ()=> {
     { text:  documentIsEditable.value ? "Verrouiller" :"Deverrouiller", title: "Verrou document" , icon:  documentIsEditable.value ? "lock": "lock_open", click: () => { documentIsEditable.value = !documentIsEditable.value ;  } },
    
     { is: "separator" },
-    { text: "Add edit block", type: "compact", title: "Ajout un bloc editable à l'emplacement du curseur", icon: "add", disabled: documentIsEditable.value ?  false : true,  click: () => { addEditableElement(editableBlock)  } },
-    { text: "Add edit line", type: "compact", title: "Ajout un span editable à l'emplacement du curseur", icon: "add",  disabled: documentIsEditable.value ?  false : true, click: () => { addEditableElement(editableSpan)  } },
-    { text: "Turn into Edit", type: "compact", title: "Rendre la selection editable", icon: "select_all",  disabled: documentIsEditable.value ?  false : true, click: () => { turnIntoEditable()  } },
+    { text: "Paragraphe Editable", type: "compact", title: "Ajout un bloc editable à l'emplacement du curseur", icon: "add", disabled: documentIsEditable.value ?  false : true,  click: () => { addEditableElement(editableBlock)  } },
+    { text: "Ligne Editable", type: "compact", title: "Ajout un span editable à l'emplacement du curseur", icon: "add",  disabled: documentIsEditable.value ?  false : true, click: () => { addEditableElement(editableSpan)  } },
+    { text: "Selection Editable", type: "compact", title: "Rendre la selection editable", icon: "select_all",  disabled: documentIsEditable.value ?  false : true, click: () => { turnIntoEditable()  } },
 
     { is: "separator" },
 
