@@ -3,15 +3,22 @@
 // IMPORT
 import VueDocumentEditor from 'vue-document-editor'
 import VueFileToolbarMenu from 'vue-file-toolbar-menu';
-import {ref, computed, onMounted} from 'vue'
+import {ref, computed, watch } from 'vue'
+import { useStore } from '../stores/content'
 
 
 // VARIABLES
+const store = useStore()
 const editableBlock = `<div class='editableBlock' contenteditable='true'> <br> <h3> Editable Block </h3> Please Edith me </div>`
 const editableSpan = `<span class='editableSpan' contenteditable='true'> <br>   Span Edith me </span>`
 const magicBlock = `  <div class='magicblock' id="magicblock" contenteditable='true'><input type="checkbox" id="magicbox" checked > <br> <h3> Editable Block-1 </h3> Please Edith me </div>`
 
-const  content= ref( ["<div> Coller du texte ici </div>"] )
+
+const content = computed({
+  get: () => store.content,
+  set: (value) => store.updateContent(value)
+})
+// const  content= ref( ["<div> Coller du texte ici </div>"] )
 const  documentIsEditable = ref(true)
 
 // FUNCTIONS
@@ -72,11 +79,9 @@ const menu =  computed( ()=> {
   ]
 } )
 
-const constraint = computed( ()=>{
-
-
+watch(content, (newContent) =>{
+  console.log("content is : ", content)
 } )
-
 
   
 </script>
