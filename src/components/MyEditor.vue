@@ -48,11 +48,6 @@ const handleMagicCheckbox = ()=>{
   checkbox.addEventListener("change", toggleDiv)
   }
 
-
-
-
-
-
 //COMPUTED
 const menu =  computed( ()=> {
   return   [
@@ -65,6 +60,13 @@ const menu =  computed( ()=> {
     { text: "Selection Editable", type: "compact", title: "Rendre la selection editable", icon: "select_all",  disabled: documentIsEditable.value ?  false : true, click: () => { turnIntoEditable()  } },
     { text: "Magic Block", type: "compact", title: "Ajoute un bloc dynamique", icon: "view_timeline",  disabled: documentIsEditable.value ?  false : true, click: () => { addEditableElement(magicBlock), handleMagicCheckbox()  } },
 
+    { is: "separator" },
+
+    { icon: "format_align_left", title: "Align left",   click: () => document.execCommand("justifyLeft") },
+    { icon: "format_align_center", title: "Align center",   click: () => document.execCommand("justifyCenter") },
+    { icon: "format_align_right", title: "Align right",   click: () => document.execCommand("justifyRight") },
+    { icon: "format_align_justify", title: "Justify content",  click: () => document.execCommand("justifyFull") },
+    
     { is: "separator" },
 
   ]
