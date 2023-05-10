@@ -15,7 +15,7 @@ const magicBlock = `  <div class='magicblock' id="magicblock" contenteditable='t
 
 
 const content = computed({
-  get: () => store.content,
+  get: () => [store.content],
   set: (value) => store.updateContent(value)
 })
 // const  content= ref( ["<div> Coller du texte ici </div>"] )
