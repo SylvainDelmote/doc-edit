@@ -1,1 +1,9 @@
 @import './base.css';
+
+
+/* Couleur de fond du document quand il est en mode édition libre */
+*[contenteditable="true"] {
+    background: #b0cf95;
+    transition: padding 0.05s linear;
+  }
+  
